@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.css';
 
 class App extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const url = "https://localhost:7094/api/Employee";
+    const url = "https://localhost:4439/api/Employee";
     fetch(url)
     .then(response => response.json())
     .then(json =>this.setState({ employees: json }))
@@ -17,23 +18,26 @@ class App extends Component {
 
   render() {
     const { employees } = this.state;
-    console.log("employees:",employees);
+    //console.log("employees:",employees);
     return (
       <div className="container">
         <div className="jumbotron">
-          <h1 className="display-4">Employees Details</h1>
+          <h4 className="display-4">Employees Details</h4>
         </div>
+        
         {employees.map((emp) => (
           <div className="card" key={emp.id}>
             <div className="card-header">
-              #{emp.id} {emp.fullName}
+              #{emp.id} {emp.fullName} 
             </div>
             <div className="card-body">
               <p className="card-text">{emp.bio}</p>
             </div>
           </div>
-        ))}
+        ))
+        }
       </div>
+      
     );
   }
 }

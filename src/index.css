@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app .card-header {
+  color: white;
+  font-weight: bold;
+  background-color: dodgerblue!important;
+}
