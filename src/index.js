@@ -3,14 +3,37 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Posts  from './components/Posts' ;
+import Contr from './components/Countr';
+import FuncComp from './components/FuncComp';
+
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
+class HelloClass extends React.Component {
   
+  state = {
+    Manager: "James"
+  }
+
+  render() {
+    //An important thing to consider is that props are read-only, meaning components cannot modify their props.
+    //Interactive apps generally need to change data and the page elements.
+    return <b><center><p>Hello,props: {this.props.name},stat:{this.state.Manager} from Class Component!</p></center></b>;
+  }
+} 
+function Hello(props) {
+  return <center><h3>Hello, {props.name} from functional components!</h3></center>;
+}
+
+ReactDOM.render(
+
   <React.StrictMode>
     
     <App />
+    <Hello name="React!" />
+    <HelloClass name="React!" />
     <Posts />
+    <Contr />
+    <FuncComp></FuncComp>
   </React.StrictMode>,
   document.getElementById('root')
 );
