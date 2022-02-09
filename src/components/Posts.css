@@ -1,0 +1,17 @@
+.app {
+    padding: 10px;
+  }
+  
+  .app .jumbotron {
+    text-align: center;
+  }
+  
+  .app .card {
+    margin-bottom: 15px;
+  }
+  
+  .app .card-header {
+    color: white;
+    font-weight: bold;
+    background-color: dodgerblue!important;
+  }
