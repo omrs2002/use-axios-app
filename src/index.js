@@ -31,31 +31,22 @@ ReactDOM.render(
   <React.StrictMode>
     <div className='row'>
       <div className='col-md-6'> 
-       <App />
+      <Hello name="React!" />
+  <HelloClass name="React hello class!" />
+  <FuncComp></FuncComp>
       </div>
       <div className='col-md-6'>
+        <App />
          <Posts />
       </div>
     </div>
-    <div className='row'>
-      <div className='col-md-6'>
-          <Hello name="React!" />
-      </div>
-      <div className='col-md-6'>
-        <HelloClass name="React hello class!" />
-      </div>
-    </div>
+    
     <div className='row'>
       <div className='col-md-6'> 
       <Contr />
       </div>
       <div className='col-md-6'> 
-       <FuncComp></FuncComp>
-      </div>
-    </div>
-    <div className='row'>
-      <div className='col-md-6'>
-        <h1>Contact Manager</h1>
+     <h1>Contact Manager</h1>
       <ContactManager data={contacts} />
       </div>
     </div>

@@ -1,6 +1,7 @@
 import AddPersonForm from './AddPerson'
 import  PeopleList from './PeopleList'
 import React, { useState } from 'react';
+import  '../Styles/ContactM.css'
 
 function ContactManager(props) {
     const [contacts, setContacts] = useState(props.data);
