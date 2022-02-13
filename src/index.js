@@ -5,6 +5,7 @@ import App from './App';
 import Posts  from './components/Posts' ;
 import Contr from './components/Countr';
 import FuncComp from './components/FuncComp';
+import ContactManager from './components/ContactManager'
 
 import reportWebVitals from './reportWebVitals';
 
@@ -23,17 +24,41 @@ class HelloClass extends React.Component {
 function Hello(props) {
   return <center><h3>Hello, {props.name} from functional components!</h3></center>;
 }
+const contacts = ["James Smith", "Thomas Anderson", "Bruce Wayne"];
 
 ReactDOM.render(
 
   <React.StrictMode>
-    
-    <App />
-    <Hello name="React!" />
-    <HelloClass name="React!" />
-    <Posts />
-    <Contr />
-    <FuncComp></FuncComp>
+    <div className='row'>
+      <div className='col-md-6'> 
+       <App />
+      </div>
+      <div className='col-md-6'>
+         <Posts />
+      </div>
+    </div>
+    <div className='row'>
+      <div className='col-md-6'>
+          <Hello name="React!" />
+      </div>
+      <div className='col-md-6'>
+        <HelloClass name="React hello class!" />
+      </div>
+    </div>
+    <div className='row'>
+      <div className='col-md-6'> 
+      <Contr />
+      </div>
+      <div className='col-md-6'> 
+       <FuncComp></FuncComp>
+      </div>
+    </div>
+    <div className='row'>
+      <div className='col-md-6'>
+        <h1>Contact Manager</h1>
+      <ContactManager data={contacts} />
+      </div>
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
