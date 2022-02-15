@@ -24,7 +24,7 @@ class HelloClass extends React.Component {
   render() {
     //An important thing to consider is that props are read-only, meaning components cannot modify their props.
     //Interactive apps generally need to change data and the page elements.
-    return <b><center><p>Hello,props: {this.props.name},stat:{this.state.Manager} from Class Component!</p></center></b>;
+    return <b><center><p>Hello,props: {this.props.name},state:{this.state.Manager} from Class Component!</p></center></b>;
   }
 } 
 function Hello(props) {
@@ -96,21 +96,25 @@ const store2 = createStore(reducer2);
 const CounterRedux = connect(mapStateToProps, mapDispatchToProps)(CounterRed);
 
 //#endregion
+//const nameContext = React.createContext('Welcome');
 
 
 ReactDOM.render(
 
   <React.StrictMode>
+    <div className='container text-center'>
+
+    
     <div className='row'>
       <div className='col-md-6'> 
       <Hello name="React!" />
-      <hr/>
+      <hr/><br/>
   <HelloClass name="React hello class!" />
   <hr/>
   <FuncComp></FuncComp>
   <br/>
   <hr/>
-  <center >
+  
       <h3>Redux Counter</h3>
       <Provider store={store}>
               <CounterRedux/>
@@ -122,7 +126,7 @@ ReactDOM.render(
         </Provider>
               <hr/>
               <Contr />
-  </center>
+  
       </div>
       <div className='col-md-6'>
         <App />
@@ -140,6 +144,7 @@ ReactDOM.render(
      <h1>Contact Manager</h1>
       <ContactManager data={contacts} />
       </div>
+    </div>
     </div>
   </React.StrictMode>,
   document.getElementById('root')
