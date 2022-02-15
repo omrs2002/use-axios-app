@@ -13,6 +13,7 @@ import { createStore } from 'redux';
 import { connect } from 'react-redux';
 
 import Counter from './components/reduxCounter'
+import ReducerCounter from './components/ReducerCouter';
 
 
 class HelloClass extends React.Component {
@@ -76,9 +77,9 @@ function CounterRed(props) {
 
     return <div>
     <p>{props.count}</p>
-    <button  className="btn btn-primary btn-sm" onClick={handleClick}>Increment</button>
-    <span> </span>
     <button className="btn btn-warning btn-sm" onClick={handleDecClick}>Decrement</button>
+    <span> </span>
+    <button  className="btn btn-primary btn-sm" onClick={handleClick}>Increment</button>
     </div>
 }
 
@@ -120,12 +121,16 @@ ReactDOM.render(
               <CounterRedux/>
             </Provider>
               <hr/>
-              
               <Provider store={store2}>
           <Counter/>
+
         </Provider>
+
               <hr/>
               <Contr />
+              <hr/>
+            
+              <ReducerCounter></ReducerCounter>
   
       </div>
       <div className='col-md-6'>
@@ -137,7 +142,6 @@ ReactDOM.render(
     
     <div className='row'>
       <div className='col-md-6'> 
-   
       
       </div>
       <div className='col-md-6'> 
