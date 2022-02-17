@@ -1,11 +1,24 @@
 import React from 'react';
 import './Posts.css';
 
+
 class Contr extends React.Component {
-    state = {
+  constructor(props)  
+  {
+    super(props);
+
+    this.btnCounter = React.createRef();
+ 
+    this.state = {
       counter: 0
-    }
+    };
+
+  }
+
+ 
     
+    
+
     increment = () => {
         this.setState({
          counter: this.state.counter+1});
@@ -13,6 +26,8 @@ class Contr extends React.Component {
 
       componentDidMount() { 
         console.log('counter componentDidMount called, counter value='+this.state.counter );
+        console.log(this.btnCounter.current);
+        console.log(document.getElementById('btnCounter'));
         }
 
         componentDidUpdate() {
@@ -30,7 +45,10 @@ class Contr extends React.Component {
             </div>
             <div className="card-body">
                 <p>{this.state.counter}</p>
-                <button onClick={this.increment}>Increment</button>
+                <button
+                id="btnCounter"
+                ref={this.btnCounter}
+                onClick={this.increment}>Increment</button>
             </div>
           </div>
           </div>

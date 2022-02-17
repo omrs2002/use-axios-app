@@ -1,18 +1,11 @@
 import React, { useState,useEffect  } from 'react'; 
 
-
-
 function FuncComp(props) {
     
 // useState returns a pair, the current state value and a function, that lets you change the state.
 // useState takes one argument, which is the initial value of the state.
     const [name, setName] = useState("David");
-
-      /*
-      useEffect(() => {
-        console.log("Name Updated to:" +name);
-      });
-    */
+    
       //To call the method only when something changes, we can provide it a second argument:
         useEffect(() => {
             //do something
