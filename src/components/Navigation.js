@@ -9,15 +9,25 @@ class Navigation extends Component {
     return (
       <nav className="site-nav family-sans navbar navbar-expand bg-primary navbar-dark higher">
         <div className="container-fluid">
-          <Link to="/" className="navbar-brand">
-            <FaUsers className="mr-1" /> Meeting Log
+          <Link to="/Home" className="navbar-brand">
+            <FaUsers className="mr-1" /> Home Page
           </Link>
           <div className="navbar-nav ml-auto">
-            {user && (
-              <Link className="nav-item nav-link" to="/meetings">
-                meetings
+          <Link className="nav-item nav-link" to="/Home">
+              Home Page
               </Link>
-            )}
+          <Link className="nav-item nav-link" to="/Counters">
+                Counters
+              </Link>
+              <Link className="nav-item nav-link" to="/Api">
+                Call Apis
+              </Link>
+              <Link className="nav-item nav-link" to="/ContactManager">
+              Contact Manager
+              </Link>
+</div>
+
+          <div className="navbar-nav ml-auto">
             {!user && (
               <Link className="nav-item nav-link" to="/login">
                 log in

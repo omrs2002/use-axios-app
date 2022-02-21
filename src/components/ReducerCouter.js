@@ -20,6 +20,8 @@ function ReducerCounter() {
     const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
+    <>
+    
     <div className="card">
           
          <h5 className="card-title">Reducer Counter</h5>
@@ -38,6 +40,8 @@ function ReducerCounter() {
         </div>
       
     </div>
+    </>
+    
 
     );
   } export default ReducerCounter

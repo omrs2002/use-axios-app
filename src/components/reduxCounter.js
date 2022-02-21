@@ -11,9 +11,12 @@ function Counter(props) {
     props.incrementCounter(1);
   }
     return <div>
+      <h4>Redux Counter</h4>
     <p>{props.count}</p>
-    <button onClick={handleClick}>Increment</button>
+    <button className="btn btn-primary btn-sm" onClick={handleClick}>Increment</button>
+    <hr></hr>
     </div>
+    
 }
 
 function mapStateToProps(state) {

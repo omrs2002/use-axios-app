@@ -20,6 +20,7 @@ function FuncComp(props) {
         <h5>Hello functional {name} components!</h5>
         <input type="text"  id="txtName"  />
         <button onClick={handleChange}> Update name to omar</button>
+        <hr></hr>
         </center>)
   }
   export default FuncComp;

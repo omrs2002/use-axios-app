@@ -15,6 +15,8 @@ function ContactManager(props) {
 
       return (
         <div>
+          <h1>Contact Manager</h1>
+          <br></br>
           <AddPersonForm handleSubmit={addPerson} />
           <PeopleList data={contacts} />
         </div>
