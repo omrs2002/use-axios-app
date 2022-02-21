@@ -14,7 +14,8 @@ import { connect } from 'react-redux';
 
 import Counter from './components/reduxCounter'
 import ReducerCounter from './components/ReducerCouter';
-
+import Navigation from './components/Navigation';
+//import { Router } from '@reach/router';
 
 class HelloClass extends React.Component {
   
@@ -42,7 +43,8 @@ function decrementCounter(num) {
   return { type: 'DECREMENT', num: num }
 }
 
-const initialState = {count: 0};
+const initialState = {count: 0,
+  user:"omar Abuhadid"};
 
 
 // Reducer function
@@ -99,18 +101,25 @@ const CounterRedux = connect(mapStateToProps, mapDispatchToProps)(CounterRed);
 //#endregion
 //const nameContext = React.createContext('Welcome');
 
+const user = "omar Abuhadid";
 
 ReactDOM.render(
-
+  
   <React.StrictMode>
-    <div className='container text-center'>
 
-    
-    <div className='row'>
-      <div className='col-md-6'> 
-      <Hello name="React!" />
+     <Navigation
+          user={user}
+          logOutUser = {null}
+        />
+           <div className='container text-center'> 
+            <div className='row'>
+              <div className='col-md-6'> 
+               
+                  <Hello path="Hello"  name="React!" />
+               
+      
       <hr/><br/>
-  <HelloClass name="React hello class!" />
+  <HelloClass path="Hello" name="React hello class!" />
   <hr/>
   <FuncComp></FuncComp>
   <br/>
@@ -150,7 +159,10 @@ ReactDOM.render(
       </div>
     </div>
     </div>
-  </React.StrictMode>,
+  
+  </React.StrictMode>
+ 
+  ,
   document.getElementById('root')
 );
 
