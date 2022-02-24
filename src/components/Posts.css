@@ -1,13 +1,20 @@
 .app {
-    padding: 10px;
+    padding: 5px;
   }
   
   .app .jumbotron {
     text-align: center;
   }
   
+  .jumbotron {
+    padding-top: 1rem!important;
+     padding: 0.5rem 1rem!important; 
+    background-color: steelblue;
+    color: white;
+  }
+
   .app .card {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   
   .app .card-header {
@@ -15,3 +22,18 @@
     font-weight: bold;
     background-color: dodgerblue!important;
   }
+  .spinner {
+    animation: spin infinite 5s linear;
+    font-size: 55;
+    /*You can increase or decrease the timer (5s) to 
+     increase or decrease the speed of the spinner*/
+  }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

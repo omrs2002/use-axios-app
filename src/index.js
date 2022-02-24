@@ -124,6 +124,7 @@ const user = "omar Abuhadid";
 ReactDOM.render(
   <React.StrictMode>
     <Navigation user={user} logOutUser={null} />
+    <br/>
     <div className="container text-center">
       
           <Router>
