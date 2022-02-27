@@ -35,14 +35,19 @@ class HelloClass extends React.Component {
     );
   }
 }
+
+function WelcomeFunctionWithPorop(props) {
+  return (<h1>Hello,Hello,  {props.name}</h1>);
+}
+
 function Hello(props) {
-  return (
-    <center>
-      <h3>Hello, {props.name} from functional components!</h3>
-      <br /><hr />
-    </center>
-    
-  );
+  return( 
+      <>
+      <center>
+            <h3>Hello, {props.name} from functional components!</h3>
+            <br /><hr />
+          </center>
+          </>);
 }
 const contacts = ["James Smith", "Thomas Anderson", "Bruce Wayne"];
 
@@ -121,19 +126,37 @@ const CounterRedux = connect(mapStateToProps, mapDispatchToProps)(CounterRed);
 
 const user = "omar Abuhadid";
 
+let HomeP = () => <div>  <h1 >
+            Home page
+            </h1></div>
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Navigation user={user} logOutUser={null} />
     <br/>
     <div className="container text-center">
-      
-          <Router>
-            <Hello path="Home" name="React!" />
-            <HelloClass path="Home" name="React hello class!" />
-          </Router>
-            <Provider store={store} > 
+   
+    
             <Router>
-            <CounterRedux path="Counters" />
+            <HomeP path="Home" />
+            </Router>
+            <Router>
+            <WelcomeFunctionWithPorop  name="omar abuhadid!" path="Home"/>
+            </Router>
+           
+            <Router><Hello path="Home" name="React!" />
+            </Router>
+            <Router><HelloClass path="Home" name="React hello class!" />
+            </Router>
+            <Router><WelcomeFunctionWithPorop path="Home" name="omar abuhadid!"/>
+            </Router>
+
+            <Provider store={store}>
+            <Router>
+                <CounterRedux path="Counters" />
+            </Router>
+            <Router>
             <FuncComp path="Counters"/>
             </Router>
           </Provider>
@@ -142,14 +165,12 @@ ReactDOM.render(
             <Counter path="Counters" />
            </Router>
           </Provider>
-          <Router>
-          <ReducerCounter path="Counters"/>
-          <Contr path="Counters" />
-          <App path="Api" />
           
-          <ContactManager data={contacts} path="ContactManager" />
+          <Router><ReducerCounter path="Counters"/></Router>
           
-
+          <Router><Contr path="Counters" /></Router>
+          <Router><App path="Api" /></Router>
+           <Router><ContactManager data={contacts} path="ContactManager" />
           </Router>
          
           <Router>
