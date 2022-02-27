@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FaUsers } from 'react-icons/fa';
-import { Link } from '@reach/router';
+import {Navigate,BrowserRouter, Routes, Route, Outlet, Link } from "react-router-dom";
 
 class Navigation extends Component {
   render() {
@@ -9,11 +9,16 @@ class Navigation extends Component {
     return (
       <nav className="site-nav family-sans navbar navbar-expand bg-primary navbar-dark higher">
         <div className="container-fluid">
-          <Link to="/Home" className="navbar-brand">
+          <nav>
+            
+          </nav>
+         
+          {/* <Link to="/Home" className="navbar-brand">
             <FaUsers className="mr-1" /> Home Page
-          </Link>
+          </Link> */}
+
           <div className="navbar-nav ml-auto">
-          <Link className="nav-item nav-link" to="/Home">
+          {/* <Link className="nav-item nav-link" to="/Home">
               Home Page
               </Link>
           <Link className="nav-item nav-link" to="/Counters">
@@ -24,11 +29,11 @@ class Navigation extends Component {
               </Link>
               <Link className="nav-item nav-link" to="/ContactManager">
               Contact Manager
-              </Link>
+              </Link> */}
 </div>
 
           <div className="navbar-nav ml-auto">
-            {!user && (
+            {/* {!user && (
               <Link className="nav-item nav-link" to="/login">
                 log in
               </Link>
@@ -46,7 +51,7 @@ class Navigation extends Component {
               >
                 log out
               </Link>
-            )}
+            )} */}
           </div>
         </div>
       </nav>

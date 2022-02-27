@@ -13,7 +13,8 @@ import { connect } from "react-redux";
 import Counter from "./components/reduxCounter";
 import ReducerCounter from "./components/ReducerCouter";
 import Navigation from "./components/Navigation";
-import { Router } from "@reach/router";
+import {Navigate,BrowserRouter, Routes, Route, Outlet, Link,useHref } from "react-router-dom";
+//import { Router } from "@reach/router";
 
 class HelloClass extends React.Component {
   state = {
@@ -132,51 +133,38 @@ let HomeP = () => <div>  <h1 >
 
 
 ReactDOM.render(
+  
   <React.StrictMode>
     <Navigation user={user} logOutUser={null} />
     <br/>
     <div className="container text-center">
-   
-    
-            <Router>
-            <HomeP path="Home" />
-            </Router>
-            <Router>
-            <WelcomeFunctionWithPorop  name="omar abuhadid!" path="Home"/>
-            </Router>
-           
-            <Router><Hello path="Home" name="React!" />
-            </Router>
-            <Router><HelloClass path="Home" name="React hello class!" />
-            </Router>
-            <Router><WelcomeFunctionWithPorop path="Home" name="omar abuhadid!"/>
-            </Router>
-
+    <BrowserRouter>
+    <Routes>
+        <Route path="/Home" element={<HomeP />} />
+        <Route path="/Home" element={<WelcomeFunctionWithPorop  name="omar abuhadid!" path="Home"/>} />
+        <Route path="/Home" element={<Hello path="Home" name="React!" />} />
+        <Route path="/Home" element={<HelloClass path="Home" name="React hello class!" />} />
+        <Route path="/Home" element={<WelcomeFunctionWithPorop path="Home" name="omar abuhadid!"/>} />
+    </Routes>
+    </BrowserRouter>
             <Provider store={store}>
-            <Router>
+            
                 <CounterRedux path="Counters" />
-            </Router>
-            <Router>
+            
             <FuncComp path="Counters"/>
-            </Router>
+            
           </Provider>
           <Provider store={store2}>
-          <Router>
+          
             <Counter path="Counters" />
-           </Router>
           </Provider>
           
-          <Router><ReducerCounter path="Counters"/></Router>
+          <ReducerCounter path="Counters"/>
           
-          <Router><Contr path="Counters" /></Router>
-          <Router><App path="Api" /></Router>
-           <Router><ContactManager data={contacts} path="ContactManager" />
-          </Router>
-         
-          <Router>
+          <Contr path="Counters" />
+          <App path="Api" />
+          <ContactManager data={contacts} path="ContactManager" />
             <Posts path="Api" />
-          </Router>
-       
     </div>
   </React.StrictMode>,
 
