@@ -45,7 +45,7 @@ class Posts extends Component {
         <div className="jumbotron">
           <h1 className="display-4">Blog posts</h1>
         </div>
-        {loading ? <h5><FaSpinner icon="spinner" className="spinner" /></h5> : data }
+        {loading ? <h5><FaSpinner icon="spinner" className="spinner" size={70} /></h5> : data }
         <br/>
       </div>
     );

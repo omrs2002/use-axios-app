@@ -14,6 +14,7 @@ import Counter from "./components/reduxCounter";
 import ReducerCounter from "./components/ReducerCouter";
 import Navigation from "./components/Navigation";
 import { Router } from "@reach/router";
+import Clock from "./components/Clock"
 
 class HelloClass extends React.Component {
   state = {
@@ -137,7 +138,9 @@ ReactDOM.render(
     <br/>
     <div className="container text-center">
    
-    
+    <Router>
+            <Clock  path="Home" />
+            </Router>
             <Router>
             <HomeP path="Home" />
             </Router>
