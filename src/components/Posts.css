@@ -15,6 +15,10 @@
 
   .app .card {
     margin-bottom: 10px;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
   }
   
   .app .card-header {
