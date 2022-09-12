@@ -15,6 +15,7 @@ import ReducerCounter from "./components/ReducerCouter";
 import Navigation from "./components/Navigation";
 import { Router } from "@reach/router";
 import Clock from "./components/Clock"
+import QRCodeA  from "./components/QRCodeA";
 
 class HelloClass extends React.Component {
   state = {
@@ -177,9 +178,10 @@ ReactDOM.render(
           </Router>
          
           <Router>
-            <Posts path="Api" />
+            <Posts path="Api" /> 
+            <QRCodeA  path="Api" /> 
           </Router>
-       
+          
     </div>
   </React.StrictMode>,
 
