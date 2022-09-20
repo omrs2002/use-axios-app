@@ -16,7 +16,7 @@ class Posts extends Component {
   
 
   componentDidMount() {
-    const url = "https://jsonplaceholder.typicode.com/posts";
+    const url = "https://api.github.com/users/omrs2002/repos";
     
     axios.get(url).then((response) => {
       
@@ -29,13 +29,15 @@ class Posts extends Component {
   render() {
     const { posts,loading } = this.state;
     let data = 
-    <> {posts.slice(0, 5).map((post) => (
+    <> {posts.map((post) => (
       <div className="card" key={post.id}>
         <div className="card-header">
-        <span style={{color:'blue', fontSize:'25px'}}><FaCoffee  /></span> #{post.id} {post.title}
+        <a href={post.html_url}>
+        <span style={{color:'blue', fontSize:'25px'}}><FaCoffee  /></span> {post.name}
+        </a>
         </div>
-        <div className="card-body">
-          <p className="card-text">{post.body}</p>
+        <div className="card-body" style={{textAlign:'left', fontSize:'14px'}}>
+          <p className="card-text">{post.description}</p>
         </div>
       </div>
     ))}</>;
@@ -43,7 +45,7 @@ class Posts extends Component {
     return (
       <div className="container">
         <div className="jumbotron">
-          <h1 className="display-4">Blog posts</h1>
+          <h1 className="display-4">GitHub posts</h1>
         </div>
         {loading ? <h5><FaSpinner icon="spinner" className="spinner" size={70} /></h5> : data }
         <br/>

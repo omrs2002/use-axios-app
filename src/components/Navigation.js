@@ -22,6 +22,9 @@ class Navigation extends Component {
               <Link className="nav-item nav-link" to="/Api">
                 Call Apis
               </Link>
+              <Link className="nav-item nav-link" to="/QrCode">
+                QR Code
+              </Link>
               <Link className="nav-item nav-link" to="/ContactManager">
               Contact Manager
               </Link>

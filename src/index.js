@@ -178,10 +178,12 @@ ReactDOM.render(
           </Router>
          
           <Router>
-            <Posts path="Api" /> 
-            <QRCodeA  path="Api" /> 
-          </Router>
           
+            <Posts path="Api" /> 
+          </Router>
+          <Router>
+          <QRCodeA  path="QrCode" /> 
+          </Router>
     </div>
   </React.StrictMode>,
 
